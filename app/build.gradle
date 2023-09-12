@@ -32,7 +32,30 @@ application {
     mainClass = 'dev.creator54.jackson.App'
 }
 
-tasks.named('test') {
-    // Use JUnit Platform for unit tests.
+test {
     useJUnitPlatform()
+    
+    // Configure test reports
+    reports {
+        junitXml {
+            destination = file("$buildDir/test-results")
+        }
+    }
+
+    // Configure test logging
+    testLogging {
+        events "PASSED", "FAILED", "SKIPPED"
+        exceptionFormat = 'full' // Print full stack traces for exceptions
+        showStandardStreams = true // Show standard output and error in console
+    }
+    
+    afterSuite { desc, result ->
+        if (desc.parent == null) {
+            println "\nTEST RESULT: ${result.resultType}"
+            println "TEST SUMMARY: RAN ${result.testCount} TESTS, " +
+                    "${result.successfulTestCount} SUCCEEDED, " +
+                    "${result.failedTestCount} FAILED, " +
+                    "${result.skippedTestCount} SKIPPED"
+        }
+    }
 }

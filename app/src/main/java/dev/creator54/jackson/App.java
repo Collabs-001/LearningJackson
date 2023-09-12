@@ -5,19 +5,18 @@ package dev.creator54.jackson;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 
-import dev.creator54.jackson.Activity1.Serialization;
-import dev.creator54.jackson.Activity2.Deserialization;
+import dev.creator54.jackson.Activity1.Deserialization;
+import dev.creator54.jackson.Activity2.Serialization;
 
 public class App {
 
     public static void main(String[] args) throws JsonProcessingException {
 
         // TODO1
-        Serialization serialisation = new Serialization();
-        serialisation.run();
-
-        // TODO2
         Deserialization deserialization = new Deserialization();
         deserialization.run();
+        // TODO2
+        Serialization serialisation = new Serialization();
+        serialisation.run();
     }
 }

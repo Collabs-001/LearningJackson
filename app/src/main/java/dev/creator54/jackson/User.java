@@ -1,5 +1,7 @@
 package dev.creator54.jackson;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class User {
   private String name;
   private int age;
@@ -8,7 +10,7 @@ public class User {
 
   }
 
-  public User(String name, int age) {
+  public User(@JsonProperty("fullName") String name, @JsonProperty("age") int age) {
     this.name = name;
     this.age = age;
   }

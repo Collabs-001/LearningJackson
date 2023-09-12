@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 
-import dev.creator54.jackson.Activity2.Deserialization;
+import dev.creator54.jackson.Activity1.Deserialization;
 
 public class DeserializationTest {
   private Deserialization deserialization;

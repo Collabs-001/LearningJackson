@@ -1,14 +1,13 @@
 package dev.creator54.jackson;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 
-import dev.creator54.jackson.Activity1.Serialization;
+import dev.creator54.jackson.Activity2.Serialization;
 
 public class SerializationTest {
   private Serialization serialization;
@@ -23,7 +22,7 @@ public class SerializationTest {
     User user = new User("Sam", 25);
     String json = serialization.serializeToJson(user);
 
-    String expectedJson = "{\"name\":\"Sam\",\"age\":25}";
+    String expectedJson = "{\"age\":25,\"name\":\"Sam\"}";
     assertEquals(expectedJson, json);
   }
 }

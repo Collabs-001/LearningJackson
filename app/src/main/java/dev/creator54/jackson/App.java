@@ -3,12 +3,21 @@
  */
 package dev.creator54.jackson;
 
-public class App {
-    public String getGreeting() {
-        return "Hello World!";
-    }
+import com.fasterxml.jackson.core.JsonProcessingException;
 
-    public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+import dev.creator54.jackson.Activity1.Serialization;
+import dev.creator54.jackson.Activity2.Deserialization;
+
+public class App {
+
+    public static void main(String[] args) throws JsonProcessingException {
+
+        // TODO1
+        Serialization serialisation = new Serialization();
+        serialisation.run();
+
+        // TODO2
+        Deserialization deserialization = new Deserialization();
+        deserialization.run();
     }
 }
